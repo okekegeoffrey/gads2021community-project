@@ -16,9 +16,21 @@ export class UdemyService {
   // })
 
 
-  const headers = new HttpHeaders({ 'Authorization: Basic BASE64_ENCODED(jFMwTjjEOJhZTjZy5Z6G0D9e4o4baffeclEDsG7O: riu4sLfJOsYNTyXBPDZhJZZ4yCUFIgupTnoUrnU0fVg482lYC062hdX4MKZWgROjJCLHLtheCTVVUNzS22oIGgr6MYsNRT7Ab89gWuR4GruR1F8c27tDLApm7hzIk1TD)', 'content-type': 'application/json'}  )
+  headers = new HttpHeaders({"Content-Type": "application/json", "Accept": "application/json, text/plain, */*", "Authorization":
+  "Basic akZNd1RqakVPSmhaVGpaeTVaNkcwRDllNG80YmFmZmVjbEVEc0c3TzpyaXU0c0xmSk9zWU5UeVhCUERaaEpaWjR5Q1VGSWd1cFRub1VyblUwZlZnNDgybFlDMDYyaGRYNE1LWldnUk9qSkNMSEx0aGVDVFZWVU56UzIyb0lHZ3I2TVlzTlJUN0FiODlnV3VSNEdydVIxRjhjMjd0RExBcG03aHpJazFURA=="});
+
+  requestOptions = {
+
+    headers: this.headers,
+    redirect: "follow",
+  };
+
 
   constructor(private http: HttpClient) { }
+
+  // const headers= new HttpHeaders();
+
+  // headers.set('content-type', 'application/json');
 
   // getCourses():Observable<any[]> {
   //   return this.http.get<any[]>(this.udemyApiUrl, {headers: this.headers}).pipe(
@@ -28,7 +40,7 @@ export class UdemyService {
   // }
 
   getCourses() {
-    return this.http.get('https://www.udemy.com/api-2.0/courses/', {headers});
+    return this.http.get(this.udemyApiUrl, this.requestOptions);
   }
 
   getCourse(id:any) {

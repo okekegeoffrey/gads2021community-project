@@ -13,7 +13,7 @@ export class UdemyCourseComponent implements OnInit {
   constructor(private _udemyService: UdemyService) { }
 
   ngOnInit(): void {
-    this._udemyService.getCourses().subscribe(data => console.log(data));
+    this._udemyService.getCourses().subscribe(data => console.log(JSON.stringify(data)));
   }
 
 }
