@@ -1,0 +1,39 @@
+.container-fluid {
+  .row {
+    position: absolute;
+    .card {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+}
+
+.btn-label {
+	position: relative;
+	left: -12px;
+	display: inline-block;
+	padding: 6px 12px;
+	background: rgba(0, 0, 0, 0.15);
+	border-radius: 3px 0 0 3px;
+}
+
+.btn-labeled {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.btn {
+	margin-bottom: 10px;
+}
+
+#nav-btns {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 10px;
+}
+
+#nav-btns .btn {
+  background-color: #CDE1FF;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}

@@ -1,1 +1,35 @@
 <p>udemy-course works!</p>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div *ngFor="let result of udemyData" class="col-sm-6 col-md-4 col-lg-3">
+      <div  class="card mb-3">
+        <img [src]="result.image_480x270" class="card-img-top" alt="image thumbnail of each course">
+        <div class="card-body">
+          <h4>{{result.title}}</h4>
+          <div *ngFor="let author of result.visible_instructors; let i = index">
+            <h6 *ngIf="i === 0">Author: {{author.title}}</h6>
+          </div>
+          <h6>{{result.visible_instructors.display_name}}</h6>
+          <p>Price: {{result.price}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- font-awesome next and previous buttons -->
+
+    <div id="nav-btns">
+      <button class="btn">
+        <a [href]="">
+          <i class="fas fa-chevron-left"></i>Previous
+        </a>
+      </button>
+      <button class="btn">
+        <a [href]="">Next
+          <i class="fas fa-chevron-right"></i></a>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
