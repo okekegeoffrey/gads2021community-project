@@ -39,8 +39,8 @@ export class UdemyService {
   //   )
   // }
 
-  getCourses() {
-    return this.http.get(this.udemyApiUrl, this.requestOptions);
+  getCourses(url:any) {
+    return this.http.get(url, this.requestOptions);
   }
 
   getCourse(id:any) {
